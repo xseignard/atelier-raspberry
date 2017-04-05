@@ -1,0 +1,39 @@
+while True:
+    # Lire les états des entrées
+    input_state1 = GPIO.input(17)
+    input_state2 = GPIO.input(18)
+    quit_video = GPIO.input(24)
+
+    # Si la pin 17 est à la masse
+    if input_state1 != last_state1:
+        if (player and not input_state1):
+            os.system('killall omxplayer.bin')
+            omxc = Popen(['omxplayer', '-b', movie1])
+            player = True
+        elif not input_state1:
+            omxc = Popen(['omxplayer', '-b', movie1])
+            player = True
+
+    # Si la pin 18 est à la masse
+    elif input_state2 != last_state2:
+        if (player and not input_state2):
+            os.system('killall omxplayer.bin')
+            omxc = Popen(['omxplayer', '-b', movie2])
+            player = True
+        elif not input_state2:
+            omxc = Popen(['omxplayer', '-b', movie2])
+            player = True
+
+    # Si la lecture s'effectue et les pins 17 et 18 ne sont pas à la masse
+    elif (player and input_state1 and input_state2):
+        os.system('killall omxplayer.bin')
+        player = False
+
+    # Si la pin 24 est à la masse, on éteint les vidéos
+    if quit_video == False:
+        os.system('killall omxplayer.bin')
+        player = False
+
+    # On met à jour l'état des pins
+    last_state1 = input_state1
+    last_state2 = input_state2
