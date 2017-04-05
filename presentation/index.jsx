@@ -172,6 +172,7 @@ const Presentation = () => (
 					<Appear><ListItem><Link href="https://www.raspberrypi.org/community/">https://www.raspberrypi.org/community/</Link></ListItem></Appear>
 					<Appear><ListItem><Link href="http://www.framboise314.fr/">http://www.framboise314.fr/</Link></ListItem></Appear>
 					<Appear><ListItem><Link href="https://fr.pinterest.com/explore/raspberry-pi-projects/">https://fr.pinterest.com/explore/raspberry-pi-projects/</Link></ListItem></Appear>
+					<Appear><ListItem><Link href="https://howchoo.com/g/mwnlytk3zmm/how-to-add-a-power-button-to-your-raspberry-pi">https://fr.pinterest.com/explore/raspberry-pi-projects/</Link></ListItem></Appear>
 					<Appear><ListItem><Link href="https://pinout.xyz/">Agencement des pins</Link></ListItem></Appear>
 				</List>
 			</Slide>
